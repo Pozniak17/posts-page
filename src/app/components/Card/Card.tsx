@@ -1,3 +1,5 @@
+import { Item } from './Card.module';
+
 interface CardProps {
   id: string;
   title: string;
@@ -6,10 +8,10 @@ interface CardProps {
 
 const Card: React.FC<CardProps> = ({ id, title, body }) => {
   return (
-    <li id={id}>
+    <Item id={id}>
       <h1>{title}</h1>
       <p>{body}</p>
-    </li>
+    </Item>
   );
 };
 
