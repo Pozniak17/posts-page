@@ -2,6 +2,7 @@
 import { useEffect, useState } from 'react';
 import axios from 'axios';
 import CardList from './components/CardList/CardList';
+import ThemeProvider from './components/ThemeProvider/ThemeProvider';
 
 export default function Home() {
   const [data, setData] = useState([]);
@@ -15,9 +16,11 @@ export default function Home() {
 
   console.log(data);
   return (
-    <main>
-      <h1>Posts Pages</h1>
-      <CardList data={data} />
-    </main>
+    <ThemeProvider>
+      <main>
+        <h1 style={{ textAlign: 'center' }}>Posts Pages</h1>
+        <CardList data={data} />
+      </main>
+    </ThemeProvider>
   );
 }
